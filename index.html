@@ -13,7 +13,7 @@
       Body Text: 400 -->
      <link rel="preconnect" href="https://fonts.googleapis.com">
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind, straight from the CDN. No build step, no install, nothing to
          run before the page works — open the file and it is styled. This line is
@@ -63,7 +63,7 @@
          is an element that means "this is the site's navigation"; find it rather
          than saying so in a class name. On a phone this has to survive without
          JavaScript. -->
-     <header class="text-brand">
+     <header class="bg-cream text-brand">
           <div class="px-6 md:px-10 lg:px-26 py-4 md:py-6 lg:py-10 flex items-center justify-between">
                <a href="#home">
                     <img
@@ -133,7 +133,94 @@
          image, and the search controls. A page has one h1, and this is where it
          goes. The search controls are real form elements even though nothing is
          submitted anywhere yet — a label belongs to every one of them. -->
+     <section id="home" class="relative isolate overflow-x-clip px-6 md:px-10 lg:px-26 pt-6 lg:pt-4">
+          <!-- Cream band: covers everything but the lower part of the search bar,
+               so the bar sits across the edge between cream and white. -->
+          <div aria-hidden="true" class="absolute inset-x-0 top-0 bottom-28 md:bottom-20 -z-10 bg-cream"></div>
 
+          <div class="grid items-center gap-8 lg:grid-cols-2 lg:items-end lg:gap-12">
+               <!-- lg:pb-32 = the search bar's upward overlap (lg:-mt-24, 96px)
+                    plus 32px of space between the button and the bar. -->
+               <div class="flex flex-col items-start gap-6 lg:gap-8 lg:self-center lg:pb-32">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-brand">
+                         Find Your Dream Home
+                    </h1>
+                    <p class="max-w-md text-base md:text-lg font-bold leading-relaxed text-cocoa">
+                         Explore our curated selection of exquisite properties meticulously tailored to your unique dream home vision
+                    </p>
+                    <button type="button" class="cursor-pointer rounded-lg bg-brand px-12 py-4 text-lg font-semibold text-white hover:bg-cocoa focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+                         Sign up
+                    </button>
+               </div>
+               <img
+                    src="assets/hero.png"
+                    alt="Modern three-storey white villa with floor-to-ceiling windows, glass balconies and a garden terrace"
+                    width="2153"
+                    height="2153"
+                    class="mx-auto w-full max-w-md md:max-w-lg lg:mx-0 lg:w-[calc(100%+6.5rem)] lg:max-w-none"
+               >
+          </div>
+
+          <form role="search" action="#properties" method="get" class="relative mt-8 grid gap-4 rounded-2xl bg-sand p-6 shadow-xl shadow-brand/10 md:grid-cols-2 lg:-mt-24 lg:grid-cols-[1fr_1fr_1fr_auto] lg:gap-6 lg:px-8 lg:py-12">
+               <div class="relative">
+                    <label for="search-location" class="sr-only">Location</label>
+                    <input
+                         id="search-location"
+                         name="location"
+                         type="text"
+                         placeholder="Location"
+                         autocomplete="address-level2"
+                         class="h-14.5 w-full rounded-lg bg-cream pl-4 pr-12 text-lg font-bold md:text-base md:font-semibold text-taupe placeholder:text-taupe focus-visible:outline-2 focus-visible:outline-brand"
+                    >
+               <svg aria-hidden="true" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-taupe" width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.3 0C3.40667 0 0 4 0 7C0 10.1414 0.952614 11.6517 2.13237 12.9283C2.50757 13.3343 2.88089 13.7681 3.26057 14.2093C3.77721 14.8096 4.30564 15.4236 4.86667 16C4.91173 16.0463 4.95783 16.0942 5.00502 16.1433C5.57938 16.7407 6.31536 17.5062 7.3 17.5C8.28464 17.5062 9.02062 16.7407 9.59497 16.1433C9.64217 16.0942 9.68827 16.0463 9.73333 16C10.2944 15.4236 10.8228 14.8096 11.3394 14.2093C11.7191 13.7681 12.0924 13.3343 12.4676 12.9283C13.6474 11.6517 14.6 10.1414 14.6 7C14.6 4 11.1933 0 7.3 0ZM7.2 9.4C8.41503 9.4 9.4 8.41503 9.4 7.2C9.4 5.98497 8.41503 5 7.2 5C5.98497 5 5 5.98497 5 7.2C5 8.41503 5.98497 9.4 7.2 9.4Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
+               </svg>
+               </div>
+
+               <div class="relative">
+                    <label for="search-type" class="sr-only">Property type</label>
+                    <select
+                         id="search-type"
+                         name="type"
+                         class="h-14.5 w-full cursor-pointer appearance-none rounded-lg bg-cream pl-4 pr-12 text-lg font-bold md:text-base md:font-semibold text-taupe focus-visible:outline-2 focus-visible:outline-brand"
+                    >
+                         <option value="">Type</option>
+                         <option value="house">House</option>
+                         <option value="apartment">Apartment</option>
+                         <option value="villa">Villa</option>
+                         <option value="townhouse">Townhouse</option>
+                    </select>
+               <svg aria-hidden="true" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-taupe" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8 9.12004C7.46957 9.12004 6.96086 9.33075 6.58579 9.70582C6.21071 10.0809 6 10.5896 6 11.12V15.804H10V11.12C10 10.5896 9.78929 10.0809 9.41421 9.70582C9.03914 9.33075 8.53043 9.12004 8 9.12004Z" fill="currentColor"/>
+                    <path d="M8.892 0.342317C8.64716 0.121941 8.32941 0 8 0C7.67059 0 7.35284 0.121941 7.108 0.342317L0.662055 6.14379C0.240637 6.52307 0 7.0634 0 7.63036V13.673C0 14.2388 0.224761 14.7814 0.624839 15.1815C1.02492 15.5816 1.56754 15.8063 2.13333 15.8063H4.66667V11.1203C4.66667 10.2363 5.01786 9.38842 5.64298 8.7633C6.2681 8.13817 7.11594 7.78698 8 7.78698C8.88406 7.78698 9.7319 8.13817 10.357 8.7633C10.9821 9.38842 11.3333 10.2363 11.3333 11.1203V15.8043H13.8667C14.4325 15.8043 14.9751 15.5796 15.3752 15.1795C15.7752 14.7794 16 14.2368 16 13.671V7.62855C16 7.06148 15.7593 6.52106 15.3377 6.14177L8.892 0.342317Z" fill="currentColor"/>
+               </svg>
+               </div>
+
+               <div class="relative">
+                    <label for="search-price" class="sr-only">Price range</label>
+                    <select
+                         id="search-price"
+                         name="price"
+                         class="h-14.5 w-full cursor-pointer appearance-none rounded-lg bg-cream pl-4 pr-12 text-lg font-bold md:text-base md:font-semibold text-taupe focus-visible:outline-2 focus-visible:outline-brand"
+                    >
+                         <option value="">Price Range</option>
+                         <option value="0-500000">Under $500k</option>
+                         <option value="500000-1000000">$500k – $1M</option>
+                         <option value="1000000-3000000">$1M – $3M</option>
+                         <option value="3000000-">Over $3M</option>
+                    </select>
+               <svg aria-hidden="true" class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-taupe" width="22" height="18" viewBox="0 0 22 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12.7 17.4C12.5636 17.4 12.5544 17.2031 12.6872 17.172C16.5345 16.2731 19.3999 12.8212 19.3999 8.70001C19.3999 4.5788 16.5345 1.12694 12.6872 0.228009C12.5544 0.196977 12.5636 0 12.7 0C17.5049 0 21.3999 3.89511 21.3999 8.70001C21.3999 13.5049 17.5049 17.4 12.7 17.4Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
+                    <path d="M8.7 17.4C13.5049 17.4 17.4 13.5049 17.4 8.7C17.4 3.89512 13.5049 0 8.7 0C3.89512 0 0 3.89512 0 8.7C0 13.5049 3.89512 17.4 8.7 17.4ZM9.68615 2.47692C9.68615 2.21353 9.47263 2 9.20923 2C8.94583 2 8.73231 2.21353 8.73231 2.47692V3.48825C8.34428 3.53257 7.99351 3.64059 7.68 3.81231C7.25744 4.03914 6.92718 4.36318 6.68923 4.78443C6.45538 5.20105 6.33846 5.69406 6.33846 6.26344C6.33846 6.85597 6.44718 7.34666 6.66462 7.73551C6.88615 8.12436 7.1959 8.45071 7.59385 8.71457C7.9918 8.9738 8.45538 9.2122 8.98462 9.42977C9.32513 9.56865 9.5959 9.71447 9.79692 9.86723C10.0021 10.02 10.1477 10.1936 10.2338 10.388C10.3241 10.5824 10.3692 10.8116 10.3692 11.0754C10.3692 11.3347 10.32 11.5661 10.2215 11.7698C10.1272 11.9689 9.98359 12.1239 9.79077 12.235C9.60205 12.3461 9.3641 12.4017 9.07692 12.4017C8.90051 12.4017 8.72615 12.3739 8.55385 12.3184C8.38154 12.2628 8.22564 12.1679 8.08615 12.0337C7.94667 11.8948 7.8359 11.7096 7.75385 11.4782C7.72387 11.3936 7.69937 11.301 7.68034 11.2004C7.61878 10.8748 7.36214 10.6033 7.03077 10.6033H6.6C6.26863 10.6033 5.99477 10.8728 6.03153 11.2021C6.07141 11.5594 6.1491 11.8759 6.26462 12.1517C6.44103 12.5683 6.67692 12.9039 6.97231 13.1585C7.27179 13.4085 7.6041 13.5891 7.96923 13.7002C8.18523 13.7659 8.40267 13.8122 8.62154 13.839V14.7262C8.62154 14.9879 8.83369 15.2 9.09538 15.2C9.35708 15.2 9.56923 14.9879 9.56923 14.7262V13.8389C9.95186 13.7939 10.2985 13.6944 10.6092 13.5405C11.0482 13.3229 11.3887 13.0058 11.6308 12.5892C11.8769 12.1725 12 11.6633 12 11.0615C12 10.4736 11.8913 9.98759 11.6738 9.60337C11.4564 9.21915 11.1508 8.89511 10.7569 8.63125C10.3631 8.36276 9.89949 8.11741 9.36615 7.89521C9.00923 7.73782 8.7282 7.58275 8.52308 7.42998C8.32205 7.27722 8.17846 7.10826 8.09231 6.92309C8.01026 6.7333 7.96923 6.51341 7.96923 6.26344C7.96923 6.00421 8.00821 5.77507 8.08615 5.57601C8.16821 5.37696 8.29538 5.21957 8.46769 5.10384C8.6441 4.98811 8.86769 4.93025 9.13846 4.93025C9.32718 4.93025 9.49538 4.96959 9.64308 5.04829C9.79487 5.12699 9.9241 5.24503 10.0308 5.40242C10.1374 5.55518 10.2195 5.74266 10.2769 5.96486C10.2908 6.01852 10.303 6.07408 10.3135 6.13152C10.3732 6.45747 10.6317 6.72867 10.9631 6.72867H11.3877C11.7191 6.72867 11.9928 6.45907 11.9547 6.12989C11.9221 5.84827 11.8654 5.58726 11.7846 5.34687C11.6533 4.93951 11.4626 4.59695 11.2123 4.3192C10.9662 4.04145 10.6687 3.83083 10.32 3.68732C10.1234 3.60282 9.91212 3.54241 9.68615 3.50612V2.47692Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
+               </svg>
+               </div>
+
+               <button type="submit" class="h-14.5 cursor-pointer rounded-lg bg-brand px-10 text-lg font-semibold text-white hover:bg-cocoa focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand">
+                    Search
+               </button>
+          </form>
+     </section>
+     
     <!-- T3 — "We help you find" section, with the stats row.
          An image beside a block of text, and three numbers with captions. Ask
          what the numbers *are* before you decide which element holds them. This
