@@ -24,6 +24,19 @@
         "6f14002535ac4f55dd676f49c8cf10958b190c7e",
         "fbeb9645f949ffbcb23f3dc694d2b8128b8eb29b"
       ]
+    },
+    {
+      "task": "T7",
+      "at": "2026-11-27T20:45:39.736Z",
+      "route": "written",
+      "branch": "T7-get-help-form",
+      "commits": [
+        "0c606b034caa6bba34aad4f3e4fa2ebd0afaf4cd",
+        "7c9ed4efe944cf4e50cddd961a90170c37d215d6",
+        "b0bd5055c9b7c28ef98af3085cad030da900f5de",
+        "2869db8b041bf95c84b18b3edcb125003b92224d",
+        "fbeb9645f949ffbcb23f3dc694d2b8128b8eb29b"
+      ]
     }
   ]
 }
