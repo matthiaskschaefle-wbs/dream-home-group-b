@@ -1,0 +1,14 @@
+{
+  "student": "247690463-matthiaskschaefle",
+  "unlocks": [
+    {
+      "task": "T5",
+      "at": "2026-11-27T12:30:54.858Z",
+      "route": "written",
+      "branch": "T5-property-cards",
+      "commits": [
+        "639a96aec155133844c14b30cefc979f0a6c31eb"
+      ]
+    }
+  ]
+}
