@@ -1,0 +1,14 @@
+{
+  "student": "182087728-selgajen",
+  "unlocks": [
+    {
+      "task": "T3",
+      "at": "2026-11-27T14:18:37.451Z",
+      "route": "written",
+      "branch": "T3-we-help-you-find",
+      "commits": [
+        "f6e92d2d3a06a9d8b917c4d0c2e97c979e4e9a0f"
+      ]
+    }
+  ]
+}
