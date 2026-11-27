@@ -1,0 +1,14 @@
+{
+  "student": "20282410-sebastianthimm",
+  "unlocks": [
+    {
+      "task": "T1",
+      "at": "2026-11-27T13:58:20.247Z",
+      "route": "written",
+      "branch": "T1-header-nav",
+      "commits": [
+        "6f14002535ac4f55dd676f49c8cf10958b190c7e"
+      ]
+    }
+  ]
+}
