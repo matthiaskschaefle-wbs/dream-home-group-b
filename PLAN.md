@@ -42,4 +42,5 @@ The header links (T1) point to these ids, so every section must use exactly this
 
 - Mobile-first: we write the phone layout with plain utility classes first, then add `md:` and `lg:` on top.
 - Breakpoints: we only use Tailwind's defaults, `md` and `lg`, so every section switches at the same width.
+- Padding: To stay consistent across sections default side padding values should be px-6 md:px-10 lg:px-26.
 - Done means: the section looks right on phone and desktop, uses semantic HTML, and one teammate approved the Pull Request.
